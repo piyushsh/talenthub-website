@@ -49,9 +49,9 @@ class Registrar implements RegistrarContract {
                     'password'  =>  $data['password'],
                     'active'    =>  0,
                     'user_type' =>  $userType,
-                    'management_level' => $data['management_level'],
+                    'management_level' => $data['managementLevel'],
                     'sport_type'=>  $data['sport_type'],
-                    'profile_image_path'=> $data['profile_image_path'],
+                    'profile_image_path'=> isset($data['profile_image_path']) ? $data['profile_image_path'] : '',
                     'confirmation_token'=>bcrypt(time()),
                 ]);
 
@@ -73,9 +73,9 @@ class Registrar implements RegistrarContract {
                 'password'  =>  $data['password'],
                 'active'    =>  0,
                 'user_type' =>  $data['user_type'],
-                'management_level' => $data['management_level'],
+                'management_level' => $data['managementLevel'],
                 'sport_type'=>  $data['sport_type'],
-                'profile_image_path'=> $data['profile_image_path'],
+                'profile_image_path'=> isset($data['profile_image_path']) ? $data['profile_image_path'] : '',
                 'confirmation_token'=>bcrypt(time()),
             ]);
         }
